@@ -1,0 +1,15 @@
+Parameter,Value,Unit,Description
+C_fixed_drone,30000,COP/vehicle,Fixed activation cost for drones
+C_fixed_truck,60000,COP/vehicle,Fixed activation cost for 4x4 trucks
+C_dist_drone,800,COP/km,Drone maintenance per km
+C_dist_truck,3000,COP/km,Truck maintenance per km
+C_time_drone,2000,COP/hour,Drone operator hourly cost
+C_time_truck,8000,COP/hour,Truck driver hourly cost
+energy_price_drone,937.81,COP/kWh,Electricity cost for drones
+fuel_price_truck,16300,COP/gallon,Diesel price for trucks
+energy_consumption_drone_min,0.06,kWh/km,Minimum drone energy consumption
+energy_consumption_drone_max,0.12,kWh/km,Maximum drone energy consumption
+fuel_efficiency_truck_min,2.1,km/L,Minimum truck fuel efficiency (4x4 off-road)
+fuel_efficiency_truck_max,2.5,km/L,Maximum truck fuel efficiency (4x4 off-road)
+start_time,07:45,HH:MM,Operations start time
+resupply_allowed,TRUE,boolean,Vehicles can return to depot for resupply (Caso 3 feature)

@@ -1,0 +1,4 @@
+VehicleID,StandardizedID,Type,Capacity,Range,Speed
+1,V001,4x4,200.0,804.0,
+2,V002,drone,25.0,480.0,135.0
+3,V003,drone,25.0,480.0,135.0

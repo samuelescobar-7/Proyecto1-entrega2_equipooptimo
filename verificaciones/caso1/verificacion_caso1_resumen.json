@@ -1,0 +1,45 @@
+{
+  "routes": [
+    {
+      "VehicleId": "V001",
+      "InitialLoad": 130,
+      "RouteSequence": "CD01 - C020 - C012 - C021 - C019 - C001 - C024 - C018 - C003 - C023 - C014 - CD01",
+      "ClientsServed": 10,
+      "DemandsSatisfied": "15-12-14-11-13-11-12-12-15-15",
+      "TotalDistance": 59.421,
+      "TotalTime": 89.13,
+      "FuelCost": 32286,
+      "OperationCost": 290261
+    },
+    {
+      "VehicleId": "V002",
+      "InitialLoad": 140,
+      "RouteSequence": "CD01 - C008 - C005 - C017 - C016 - C010 - C015 - C004 - C022 - CD01",
+      "ClientsServed": 8,
+      "DemandsSatisfied": "20-20-25-10-15-17-15-18",
+      "TotalDistance": 49.367,
+      "TotalTime": 74.05,
+      "FuelCost": 26823,
+      "OperationCost": 249606
+    },
+    {
+      "VehicleId": "V008",
+      "InitialLoad": 107,
+      "RouteSequence": "CD01 - C007 - C002 - C013 - C006 - C009 - C011 - CD01",
+      "ClientsServed": 6,
+      "DemandsSatisfied": "17-15-21-17-20-17",
+      "TotalDistance": 57.188,
+      "TotalTime": 85.78,
+      "FuelCost": 31072,
+      "OperationCost": 281230
+    }
+  ],
+  "total_cost": 821097,
+  "total_distance": 165.976,
+  "vehicle_count": 3,
+  "total_fuel_cost": 90181,
+  "total_fixed_cost": 150000,
+  "total_variable_cost": 580916,
+  "solver_used": "glpk",
+  "warnings": []
+}

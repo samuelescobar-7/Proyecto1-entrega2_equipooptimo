@@ -1,0 +1,277 @@
+[
+  {
+    "archivo": "C:\\Users\\Admin\\Desktop\\proyecto_moos_etapa2\\Proyecto_Caso_Base\\clients.csv",
+    "tipo": "clientes",
+    "n_filas": 24,
+    "issues": [],
+    "columnas": [
+      "ClientID",
+      "StandardizedID",
+      "LocationID",
+      "Latitude",
+      "Longitude",
+      "Demand"
+    ]
+  },
+  {
+    "archivo": "C:\\Users\\Admin\\Desktop\\proyecto_moos_etapa2\\Proyecto_Caso_Base\\depots.csv",
+    "tipo": "depositos",
+    "n_filas": 1,
+    "issues": [],
+    "columnas": [
+      "DepotID",
+      "StandardizedID",
+      "LocationID",
+      "Longitude",
+      "Latitude"
+    ]
+  },
+  {
+    "archivo": "C:\\Users\\Admin\\Desktop\\proyecto_moos_etapa2\\Proyecto_Caso_Base\\parameters_base.csv",
+    "tipo": "parametros",
+    "n_filas": 4,
+    "muestra_cambios": [
+      {
+        "valor_imputado": 8165.0,
+        "n_imputados": 2
+      }
+    ],
+    "issues": [],
+    "columnas": [
+      "Parameter",
+      "Value",
+      "Unit",
+      "Description"
+    ]
+  },
+  {
+    "archivo": "C:\\Users\\Admin\\Desktop\\proyecto_moos_etapa2\\Proyecto_Caso_Base\\vehicles.csv",
+    "tipo": "vehiculos",
+    "n_filas": 8,
+    "issues": [],
+    "columnas": [
+      "VehicleID",
+      "StandardizedID",
+      "Capacity",
+      "Range"
+    ]
+  },
+  {
+    "archivo": "C:\\Users\\Admin\\Desktop\\proyecto_moos_etapa2\\project_b\\Proyecto_B_Caso2\\clients.csv",
+    "tipo": "clientes",
+    "n_filas": 14,
+    "issues": [],
+    "columnas": [
+      "ClientID",
+      "StandardizedID",
+      "LocationID",
+      "Latitude",
+      "Longitude",
+      "Demand",
+      "TimeWindow"
+    ]
+  },
+  {
+    "archivo": "C:\\Users\\Admin\\Desktop\\proyecto_moos_etapa2\\project_b\\Proyecto_B_Caso2\\depots.csv",
+    "tipo": "depositos",
+    "n_filas": 1,
+    "issues": [],
+    "columnas": [
+      "DepotID",
+      "StandardizedID",
+      "LocationID",
+      "Latitude",
+      "Longitude"
+    ]
+  },
+  {
+    "archivo": "C:\\Users\\Admin\\Desktop\\proyecto_moos_etapa2\\project_b\\Proyecto_B_Caso2\\parameters_rural.csv",
+    "tipo": "parametros",
+    "n_filas": 13,
+    "muestra_cambios": [
+      {
+        "fila": 0,
+        "original": "30000",
+        "nuevo": 30000.0,
+        "razon": "coercion"
+      },
+      {
+        "fila": 1,
+        "original": "60000",
+        "nuevo": 60000.0,
+        "razon": "coercion"
+      },
+      {
+        "fila": 2,
+        "original": "800",
+        "nuevo": 800.0,
+        "razon": "coercion"
+      },
+      {
+        "fila": 3,
+        "original": "3000",
+        "nuevo": 3000.0,
+        "razon": "coercion"
+      },
+      {
+        "fila": 4,
+        "original": "2000",
+        "nuevo": 2000.0,
+        "razon": "coercion"
+      },
+      {
+        "fila": 5,
+        "original": "8000",
+        "nuevo": 8000.0,
+        "razon": "coercion"
+      },
+      {
+        "fila": 7,
+        "original": "16300",
+        "nuevo": 16300.0,
+        "razon": "coercion"
+      },
+      {
+        "fila": 12,
+        "original": "07:45",
+        "nuevo": 7.0,
+        "razon": "coercion"
+      }
+    ],
+    "issues": [],
+    "columnas": [
+      "Parameter",
+      "Value",
+      "Unit",
+      "Description"
+    ]
+  },
+  {
+    "archivo": "C:\\Users\\Admin\\Desktop\\proyecto_moos_etapa2\\project_b\\Proyecto_B_Caso2\\vehicles.csv",
+    "tipo": "vehiculos",
+    "n_filas": 3,
+    "issues": [],
+    "columnas": [
+      "VehicleID",
+      "StandardizedID",
+      "Type",
+      "Capacity",
+      "Range",
+      "Speed"
+    ]
+  },
+  {
+    "archivo": "C:\\Users\\Admin\\Desktop\\proyecto_moos_etapa2\\project_b\\Proyecto_B_Caso3\\clients.csv",
+    "tipo": "clientes",
+    "n_filas": 17,
+    "issues": [],
+    "columnas": [
+      "ClientID",
+      "StandardizedID",
+      "LocationID",
+      "Latitude",
+      "Longitude",
+      "Demand",
+      "TimeWindow"
+    ]
+  },
+  {
+    "archivo": "C:\\Users\\Admin\\Desktop\\proyecto_moos_etapa2\\project_b\\Proyecto_B_Caso3\\depots.csv",
+    "tipo": "depositos",
+    "n_filas": 1,
+    "issues": [],
+    "columnas": [
+      "DepotID",
+      "StandardizedID",
+      "LocationID",
+      "Latitude",
+      "Longitude"
+    ]
+  },
+  {
+    "archivo": "C:\\Users\\Admin\\Desktop\\proyecto_moos_etapa2\\project_b\\Proyecto_B_Caso3\\parameters_rural.csv",
+    "tipo": "parametros",
+    "n_filas": 14,
+    "muestra_cambios": [
+      {
+        "fila": 0,
+        "original": "30000",
+        "nuevo": 30000.0,
+        "razon": "coercion"
+      },
+      {
+        "fila": 1,
+        "original": "60000",
+        "nuevo": 60000.0,
+        "razon": "coercion"
+      },
+      {
+        "fila": 2,
+        "original": "800",
+        "nuevo": 800.0,
+        "razon": "coercion"
+      },
+      {
+        "fila": 3,
+        "original": "3000",
+        "nuevo": 3000.0,
+        "razon": "coercion"
+      },
+      {
+        "fila": 4,
+        "original": "2000",
+        "nuevo": 2000.0,
+        "razon": "coercion"
+      },
+      {
+        "fila": 5,
+        "original": "8000",
+        "nuevo": 8000.0,
+        "razon": "coercion"
+      },
+      {
+        "fila": 7,
+        "original": "16300",
+        "nuevo": 16300.0,
+        "razon": "coercion"
+      },
+      {
+        "fila": 12,
+        "original": "07:45",
+        "nuevo": 7.0,
+        "razon": "coercion"
+      },
+      {
+        "fila": 13,
+        "original": "TRUE",
+        "nuevo": null,
+        "razon": "no_parseable"
+      },
+      {
+        "valor_imputado": 937.81,
+        "n_imputados": 1
+      }
+    ],
+    "issues": [],
+    "columnas": [
+      "Parameter",
+      "Value",
+      "Unit",
+      "Description"
+    ]
+  },
+  {
+    "archivo": "C:\\Users\\Admin\\Desktop\\proyecto_moos_etapa2\\project_b\\Proyecto_B_Caso3\\vehicles.csv",
+    "tipo": "vehiculos",
+    "n_filas": 3,
+    "issues": [],
+    "columnas": [
+      "VehicleID",
+      "StandardizedID",
+      "Type",
+      "Capacity",
+      "Range",
+      "Speed"
+    ]
+  }
+]

@@ -1,0 +1,5 @@
+Parameter,Value,Unit,Description
+# NOTE: This is the BASE CASE - use default CVRP parameters only
+# For project-specific costs (A/B/C) see the parameters file in each project folder
+fuel_price,16300,COP/gallon,Standard gasoline price
+fuel_efficiency_typical,30,km/gallon,Typical vehicle fuel efficiency estimate

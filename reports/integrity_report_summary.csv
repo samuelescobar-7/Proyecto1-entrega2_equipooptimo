@@ -1,0 +1,13 @@
+archivo,tipo,n_filas,n_columnas,issues
+C:\Users\Admin\Desktop\proyecto_moos_etapa2\Proyecto_Caso_Base\clients.csv,clientes,24,6,[]
+C:\Users\Admin\Desktop\proyecto_moos_etapa2\Proyecto_Caso_Base\depots.csv,depositos,1,5,[]
+C:\Users\Admin\Desktop\proyecto_moos_etapa2\Proyecto_Caso_Base\parameters_base.csv,parametros,4,4,[]
+C:\Users\Admin\Desktop\proyecto_moos_etapa2\Proyecto_Caso_Base\vehicles.csv,vehiculos,8,4,[]
+C:\Users\Admin\Desktop\proyecto_moos_etapa2\project_b\Proyecto_B_Caso2\clients.csv,clientes,14,7,[]
+C:\Users\Admin\Desktop\proyecto_moos_etapa2\project_b\Proyecto_B_Caso2\depots.csv,depositos,1,5,[]
+C:\Users\Admin\Desktop\proyecto_moos_etapa2\project_b\Proyecto_B_Caso2\parameters_rural.csv,parametros,13,4,[]
+C:\Users\Admin\Desktop\proyecto_moos_etapa2\project_b\Proyecto_B_Caso2\vehicles.csv,vehiculos,3,6,[]
+C:\Users\Admin\Desktop\proyecto_moos_etapa2\project_b\Proyecto_B_Caso3\clients.csv,clientes,17,7,[]
+C:\Users\Admin\Desktop\proyecto_moos_etapa2\project_b\Proyecto_B_Caso3\depots.csv,depositos,1,5,[]
+C:\Users\Admin\Desktop\proyecto_moos_etapa2\project_b\Proyecto_B_Caso3\parameters_rural.csv,parametros,14,4,[]
+C:\Users\Admin\Desktop\proyecto_moos_etapa2\project_b\Proyecto_B_Caso3\vehicles.csv,vehiculos,3,6,[]
