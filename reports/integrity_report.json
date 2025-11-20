@@ -1,6 +1,6 @@
 [
   {
-    "archivo": "C:\\Users\\Admin\\Desktop\\proyecto_moos_etapa2\\Proyecto_Caso_Base\\clients.csv",
+    "archivo": "/Volumes/2025/Proyecto1-entrega2_equipooptimo/Proyecto_Caso_Base/clients.csv",
     "tipo": "clientes",
     "n_filas": 24,
     "issues": [],
@@ -14,7 +14,7 @@
     ]
   },
   {
-    "archivo": "C:\\Users\\Admin\\Desktop\\proyecto_moos_etapa2\\Proyecto_Caso_Base\\depots.csv",
+    "archivo": "/Volumes/2025/Proyecto1-entrega2_equipooptimo/Proyecto_Caso_Base/depots.csv",
     "tipo": "depositos",
     "n_filas": 1,
     "issues": [],
@@ -27,7 +27,7 @@
     ]
   },
   {
-    "archivo": "C:\\Users\\Admin\\Desktop\\proyecto_moos_etapa2\\Proyecto_Caso_Base\\parameters_base.csv",
+    "archivo": "/Volumes/2025/Proyecto1-entrega2_equipooptimo/Proyecto_Caso_Base/parameters_base.csv",
     "tipo": "parametros",
     "n_filas": 4,
     "muestra_cambios": [
@@ -45,7 +45,7 @@
     ]
   },
   {
-    "archivo": "C:\\Users\\Admin\\Desktop\\proyecto_moos_etapa2\\Proyecto_Caso_Base\\vehicles.csv",
+    "archivo": "/Volumes/2025/Proyecto1-entrega2_equipooptimo/Proyecto_Caso_Base/vehicles.csv",
     "tipo": "vehiculos",
     "n_filas": 8,
     "issues": [],
@@ -57,7 +57,7 @@
     ]
   },
   {
-    "archivo": "C:\\Users\\Admin\\Desktop\\proyecto_moos_etapa2\\project_b\\Proyecto_B_Caso2\\clients.csv",
+    "archivo": "/Volumes/2025/Proyecto1-entrega2_equipooptimo/project_b/Proyecto_B_Caso2/clients.csv",
     "tipo": "clientes",
     "n_filas": 14,
     "issues": [],
@@ -72,7 +72,7 @@
     ]
   },
   {
-    "archivo": "C:\\Users\\Admin\\Desktop\\proyecto_moos_etapa2\\project_b\\Proyecto_B_Caso2\\depots.csv",
+    "archivo": "/Volumes/2025/Proyecto1-entrega2_equipooptimo/project_b/Proyecto_B_Caso2/depots.csv",
     "tipo": "depositos",
     "n_filas": 1,
     "issues": [],
@@ -85,7 +85,7 @@
     ]
   },
   {
-    "archivo": "C:\\Users\\Admin\\Desktop\\proyecto_moos_etapa2\\project_b\\Proyecto_B_Caso2\\parameters_rural.csv",
+    "archivo": "/Volumes/2025/Proyecto1-entrega2_equipooptimo/project_b/Proyecto_B_Caso2/parameters_rural.csv",
     "tipo": "parametros",
     "n_filas": 13,
     "muestra_cambios": [
@@ -147,7 +147,7 @@
     ]
   },
   {
-    "archivo": "C:\\Users\\Admin\\Desktop\\proyecto_moos_etapa2\\project_b\\Proyecto_B_Caso2\\vehicles.csv",
+    "archivo": "/Volumes/2025/Proyecto1-entrega2_equipooptimo/project_b/Proyecto_B_Caso2/vehicles.csv",
     "tipo": "vehiculos",
     "n_filas": 3,
     "issues": [],
@@ -161,7 +161,7 @@
     ]
   },
   {
-    "archivo": "C:\\Users\\Admin\\Desktop\\proyecto_moos_etapa2\\project_b\\Proyecto_B_Caso3\\clients.csv",
+    "archivo": "/Volumes/2025/Proyecto1-entrega2_equipooptimo/project_b/Proyecto_B_Caso3/clients.csv",
     "tipo": "clientes",
     "n_filas": 17,
     "issues": [],
@@ -176,7 +176,7 @@
     ]
   },
   {
-    "archivo": "C:\\Users\\Admin\\Desktop\\proyecto_moos_etapa2\\project_b\\Proyecto_B_Caso3\\depots.csv",
+    "archivo": "/Volumes/2025/Proyecto1-entrega2_equipooptimo/project_b/Proyecto_B_Caso3/depots.csv",
     "tipo": "depositos",
     "n_filas": 1,
     "issues": [],
@@ -189,7 +189,7 @@
     ]
   },
   {
-    "archivo": "C:\\Users\\Admin\\Desktop\\proyecto_moos_etapa2\\project_b\\Proyecto_B_Caso3\\parameters_rural.csv",
+    "archivo": "/Volumes/2025/Proyecto1-entrega2_equipooptimo/project_b/Proyecto_B_Caso3/parameters_rural.csv",
     "tipo": "parametros",
     "n_filas": 14,
     "muestra_cambios": [
@@ -261,7 +261,7 @@
     ]
   },
   {
-    "archivo": "C:\\Users\\Admin\\Desktop\\proyecto_moos_etapa2\\project_b\\Proyecto_B_Caso3\\vehicles.csv",
+    "archivo": "/Volumes/2025/Proyecto1-entrega2_equipooptimo/project_b/Proyecto_B_Caso3/vehicles.csv",
     "tipo": "vehiculos",
     "n_filas": 3,
     "issues": [],

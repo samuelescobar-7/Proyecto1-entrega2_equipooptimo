@@ -1,0 +1,3 @@
+VehicleId,VehicleType,LoadCap,FuelCap,InitialLoad,InitialFuel,RouteSequence,Municipalities,DemandSatisfied,RefuelStops,RefuelAmounts,ArrivalTimes,TotalDistance,TotalTime,FuelCost,EnergyCost,TotalCost
+V001,Truck,200.0,92.345,167.0,92.345,CD01-C008-C011-C003-C004-C002-C012-C001-C010-C005-C014-C013-CD01,11,10-10-18-22-9-24-25-9-13-15-12,0,,08:45-08:51-10:15-13:00-13:33-13:40-13:50-14:30-14:56-15:02-15:10,26.054,86.26,48777.58,0.0,198441.37
+V003,Drone,25.0,0.0,18.0,0.0,CD01-C006-C007-C009-CD01,3,4-5-9,0,,09:00-09:11-14:18,10.317,19.59,0.0,870.75,39776.81
