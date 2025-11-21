@@ -1,10 +1,3 @@
-"""
-Heurística optimizada para Caso 3 (Proyecto B) con:
-- Asignación greedy K-NN (elige siempre el cliente factible más cercano)
-- Mejora TSP por viaje con 2-OPT para reducir distancia/tiempo
-- Soporta múltiples viajes por vehículo (resupply en CD01)
-Salida: verificaciones/caso3/verificacion_caso3_opt.csv
-"""
 from __future__ import annotations
 
 import logging
@@ -72,7 +65,7 @@ def build_distance_time(clients: pd.DataFrame,
                         depot: pd.Series,
                         speeds: Dict[str, float]) -> Tuple[List[List[float]], Dict[Tuple[int, int, str], float], List[str]]:
     coords = [(float(depot["Latitude"]), float(depot["Longitude"]))] + \
-             list(zip(clients["Latitude"].astype(float), clients["Longitude"].astype(float)))
+            list(zip(clients["Latitude"].astype(float), clients["Longitude"].astype(float)))
     ids = ["CD01"] + clients["StandardizedID"].tolist()
     n = len(coords)
     D = [[0.0 for _ in range(n)] for _ in range(n)]
@@ -89,7 +82,6 @@ def build_distance_time(clients: pd.DataFrame,
 
 
 def two_opt(route: List[int], dist: List[List[float]]) -> List[int]:
-    """2-OPT para mejorar la secuencia (sin nodo depósito)."""
     best = route[:]
     improved = True
     while improved:
@@ -128,7 +120,7 @@ def compute_cost(dist_total: float, time_min: float, vehicle: Dict[str, float], 
     time_hours = time_min / 60.0
     if vehicle["Type"].lower() == "drone":
         energy_cons = (params.get("energy_consumption_drone_min", 0.06) +
-                       params.get("energy_consumption_drone_max", 0.12)) / 2.0
+                    params.get("energy_consumption_drone_max", 0.12)) / 2.0
         energy_price = params.get("energy_price_drone", 0.0)
         variable = params.get("C_dist_drone", 0.0) * dist_total + params.get("C_time_drone", 0.0) * time_hours
         variable += dist_total * energy_cons * energy_price
@@ -146,16 +138,15 @@ def compute_cost(dist_total: float, time_min: float, vehicle: Dict[str, float], 
 
 
 def feasible_next(current: int,
-                  remaining: Set[int],
-                  cap_rem: float,
-                  range_rem: float,
-                  time_now: float,
-                  tw: Dict[int, Tuple[float, float]],
-                  demand: Dict[int, float],
-                  dist: List[List[float]],
-                  travel_time: Dict[Tuple[int, int, str], float],
-                  vid: str) -> List[Tuple[int, float, float, float]]:
-    """Retorna candidatos factibles ordenados por distancia (K-NN)."""
+                remaining: Set[int],
+                cap_rem: float,
+                range_rem: float,
+                time_now: float,
+                tw: Dict[int, Tuple[float, float]],
+                demand: Dict[int, float],
+                dist: List[List[float]],
+                travel_time: Dict[Tuple[int, int, str], float],
+                vid: str) -> List[Tuple[int, float, float, float]]:
     candidates = []
     for c in remaining:
         dem = demand[c]
@@ -173,18 +164,18 @@ def feasible_next(current: int,
         if effective_arrive > end_tw + 1e-6:
             continue
         candidates.append((c, d_to, wait, effective_arrive))
-    candidates.sort(key=lambda x: (x[1], x[3]))  # K-NN: menor distancia, luego llegada
+    candidates.sort(key=lambda x: (x[1], x[3]))
     return candidates
 
 
 def plan_vehicle(vehicle_row: pd.Series,
-                 remaining: Set[int],
-                 demand: Dict[int, float],
-                 tw: Dict[int, Tuple[float, float]],
-                 dist: List[List[float]],
-                 travel_time: Dict[Tuple[int, int, str], float],
-                 ids: List[str],
-                 start_time: float) -> List[Dict]:
+                remaining: Set[int],
+                demand: Dict[int, float],
+                tw: Dict[int, Tuple[float, float]],
+                dist: List[List[float]],
+                travel_time: Dict[Tuple[int, int, str], float],
+                ids: List[str],
+                start_time: float) -> List[Dict]:
     trips_out: List[Dict] = []
     vid = str(vehicle_row["StandardizedID"])
     cap = float(vehicle_row["Capacity"])
@@ -195,7 +186,7 @@ def plan_vehicle(vehicle_row: pd.Series,
         route_clients: List[int] = []
         cap_rem = cap
         range_rem = rng
-        time_now = start_time + trip_idx * 15  # pequeño desfase entre viajes
+        time_now = start_time + trip_idx * 15
         current = 0
 
         while True:
@@ -212,10 +203,8 @@ def plan_vehicle(vehicle_row: pd.Series,
             current = nxt
 
         if route_clients:
-            # 2-OPT para mejorar distancia sin violar factibilidad horaria (aprox: aceptamos si no rompe TW)
             improved = two_opt(route_clients, dist)
             if improved != route_clients:
-                # Verificar TW con secuencia mejorada
                 seq_ok = True
                 temp_time = start_time + trip_idx * 15
                 cap_chk = cap
@@ -250,7 +239,7 @@ def plan_vehicle(vehicle_row: pd.Series,
                 arrival_minutes.append(temp_time)
                 temp_time += SERVICE_TIME_MIN
                 curr = c
-            dist_trip += dist[curr][0]  # regreso
+            dist_trip += dist[curr][0]
             temp_time += travel_time[(curr, 0, vid)]
             time_trip_min = temp_time - (start_time + trip_idx * 15)
             load_trip = sum(demand[c] for c in route_clients)
@@ -277,7 +266,7 @@ def run_case3_opt():
     logging.info("Cargando datos Caso 3 para heurística optimizada...")
     clients_df, vehicles_df, depot_df, params = load_case_data()
     speeds = {str(r["StandardizedID"]): (float(r["Speed"]) if not pd.isna(r["Speed"]) else DEFAULT_TRUCK_SPEED)
-              for _, r in vehicles_df.iterrows()}
+            for _, r in vehicles_df.iterrows()}
     D, travel_time, ids = build_distance_time(clients_df, depot_df, speeds)
     tw = build_time_windows(clients_df)
     demand = {i: float(row["Demand"]) for i, (_, row) in enumerate(clients_df.iterrows(), start=1)}
@@ -291,7 +280,6 @@ def run_case3_opt():
         trips = plan_vehicle(veh_row, remaining, demand, tw, D, travel_time, ids, start_time)
         all_trips.extend(trips)
 
-    # Agregar métricas por vehículo consolidando viajes
     rows: List[Dict] = []
     by_vehicle: Dict[str, List[Dict]] = {}
     for trip in all_trips:
