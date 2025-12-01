@@ -1,0 +1,90 @@
+# README 
+# INTEGRANTES:
+Samuel Escobar Pineda – 202310474
+Tomas Alejandro Pardo Ramos- 202113836
+Juan David Pérez Diaz-202210323
+
+Este repositorio contiene una implementación de un **algoritmo genético (GA)** para resolver un problema de ruteo de vehículos (VRP) adaptado al caso de estudio `Proyecto_Caso_Base`, `Proyecto_Caso_2` Y `Proyecto_Caso_3`. El GA busca permutaciones de clientes que se decodifican en rutas por vehículo, repara clientes no asignados y evalúa soluciones con una función de coste operacional que incluye distancia, tiempo y penalizaciones.
+
+---
+
+## Estructura general del enfoque
+
+1. **Codificación**: cada individuo es una permutación de los índices de clientes (lista de enteros `1..n`).
+2. **Decodificación**: `decode_permutation_to_routes` asigna secuencialmente clientes a vehículos respetando capacidades (first-fit rotativo entre vehículos). Los clientes que no caben se ponen en `leftovers`.
+3. **Reparación**: `repair_insert` intenta insertar clientes sobrantes en las rutas existentes buscando la posición que minimiza el incremento de coste (distancia) y respetando capacidad.
+4. **Evaluación (fitness)**: `fitness_from_routes` calcula el coste operacional de cada ruta usando `calcular_metricas_ruta` (implementado en `caso1`) y añade penalizaciones por violaciones (capacidad, clientes no asignados, etc.).
+5. **Operadores GA**:
+
+   * Cruce: *Order Crossover (OX)* (`order_crossover`).
+   * Mutación 1: intercambio de dos genes (`mutate_swap`).
+   * Mutación 2: inversión de un segmento (`mutate_inversion`).
+   * Selección: torneo de tamaño `k=3` (`tournament_select`).
+   * Elitismo: los `elitism` mejores individuos se copian directos a la siguiente generación.
+
+---
+
+## Archivos clave
+
+* `metaheuristica_ga.py` (o el script principal): contiene la implementación del GA y la lógica de ejecución cuando se ejecuta como script.
+* `caso1.py`: utilidades externas requeridas (p. ej. `calcular_metricas_ruta`, `construir_matriz_distancias`).
+* `cleaned_data/almacenamiento_datos.pkl`: pickle con tablas `clients`, `vehicles`, `depots`. Obligatorio para la ejecución por defecto.
+* `verificaciones/GA/`: salida de CSV, JSON y gráficos generados por la ejecución.
+
+---
+
+## Uso
+
+Ejecutar el script principal (desde la raíz del proyecto):
+
+```bash
+python metaheuristica_ga.py
+```
+
+Parámetros importantes que pueden ajustarse en el `__main__` o pasando argumentos si extiendes el script:
+
+* `pop_size`: tamaño de población (por defecto 40–60 recomendados).
+* `generations`: número de generaciones (p. ej. 80–200).
+* `crossover_prob`: probabilidad de cruce (por defecto 0.9).
+* `mutation_prob`: probabilidad de mutación (por defecto 0.2).
+* `elitism`: número de individuos elitistas (p. ej. 1–5).
+* `random_seed`: semilla para reproducibilidad.
+
+Salida principal:
+
+* CSV con métricas por vehículo en `verificaciones/GA/verificacion_metaheuristica_GA_{instancia}.csv`.
+* JSON resumen en `verificaciones/GA/verificacion_metaheuristica_GA_{instancia}.json`.
+* Gráficos: curva de convergencia y mapa simple de rutas en la misma carpeta.
+
+---
+**Estrategia**: greedy local — repetido hasta que no se puede insertar más.
+
+### Evaluación
+
+`fitness_from_routes` llama a `calcular_metricas_ruta` — función externa que debe devolver, como mínimo, `OperationCost`, `TotalDistance`, `TotalTime`, `InitialLoad`, etc. El coste total suma los costes operativos por vehículo y añade penalizaciones por:
+
+* Violación de capacidad (penalización grande más término proporcional).
+* Clientes no asignados: se aplica una penalización grande (variable `penalties` / `penalty_unassigned`).
+
+Usar penalizaciones altas hace que el GA prefiera soluciones factibles (sin clientes no asignados) pero si la penalización es excesiva puede impedir explorar soluciones parcialmente factibles útiles.
+
+### Operadores genéticos
+
+* **OX (Order Crossover)**: mantiene subsecuencia contigua de un padre y rellena con el orden del otro padre. Bueno para preservar orden relativo de clientes.
+* **Mutación swap**: intercambia dos posiciones (cambio local simple).
+* **Mutación inversión**: invierte un subsegmento, útil para modificar rutas subsecuentes.
+* **Selección por torneo**: simple y robusta; con k=3 introduce presión selectiva moderada.
+
+## Resultados y archivos de salida
+
+* `verificaciones/GA/{inst_name}/verificacion_metaheuristica_GA_{inst_name}.csv`: métricas por vehículo (VehicleId, InitialLoad, RouteSequence, ClientsServed, TotalDistance, TotalTime, FuelCost, OperationCost).
+* `verificaciones/GA/{inst_name}/verificacion_metaheuristica_GA_{inst_name}.json`: resumen con `routes`, `total_cost`, `total_distance`, `vehicle_count` y `ga_summary` (historia, generaciones, población, etc.).
+* Gráficos PNG: curva de convergencia (`*_convergence.png`), mapa de rutas (`*_rutas.png`) y distribuciones (`*_histograms.png`).
+
+
+
+
+
+
+
+
