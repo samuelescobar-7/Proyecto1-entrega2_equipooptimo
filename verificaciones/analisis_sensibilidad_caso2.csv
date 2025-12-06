@@ -1,0 +1,9 @@
+scenario,solver,status,vehicles_used,total_cost,total_distance,best_cost
+baseline,Pyomo,ok,2,238218.18,36.371,
+baseline,GA,ok,3,326821.71,47.264,326821.71
+costs_up_20,Pyomo,ok,2,285861.81,36.371,
+costs_up_20,GA,ok,3,392186.05,47.264,392186.05
+range_drone_down_15,Pyomo,ok,2,238218.18,36.371,
+range_drone_down_15,GA,ok,3,326821.71,47.264,326821.71
+speed_drone_down_15,Pyomo,ok,2,238245.15,36.371,
+speed_drone_down_15,GA,ok,3,326845.03,47.264,326845.03
